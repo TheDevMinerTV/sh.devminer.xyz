@@ -86,7 +86,7 @@ func Script(baseUrl, name, content string, matter internal.Matter) templ.Compone
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div><div class=\"relative max-w-full w-full\" data-copyable=\"\" data-tab-name=\"curl\"><div class=\"absolute top-0 right-0 px-4 py-3\"><button type=\"button\" class=\"text-inactive hocus:text-white transition-colors\" aria-label=\"Copy to clipboard\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div><div class=\"relative max-w-full w-full\" data-copyable=\"\" data-tab-name=\"curl\"><div class=\"absolute top-0 right-0 p-3\"><button type=\"button\" class=\"text-inactive hocus:text-white transition-colors\" aria-label=\"Copy to clipboard\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
