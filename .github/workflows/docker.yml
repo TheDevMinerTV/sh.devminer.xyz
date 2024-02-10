@@ -54,10 +54,6 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Get current tag
-        id: get_tag
-        run: echo ::set-output name=tag::$(echo $GITHUB_REF | sed -e 's,.*/\(.*\),\1,')
-
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
