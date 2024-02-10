@@ -39,8 +39,8 @@ templ Script(baseUrl, name, content string, matter internal.Matter) {
                             </button>
                         </div>
 
-                        <code class="block whitespace-pre max-w-full px-4 py-3 overflow-y-auto">
-                            curl -s {baseUrl}/{name} | sh
+                        <code class="block whitespace-pre max-w-full px-4 py-3 overflow-y-auto [&>pre]:!bg-transparent [&>pre]:!w-max">
+                            @templ.Raw(internal.MustHighlight("shell", getCurlScript(baseUrl, name)))
                         </code>
                     </div>
 
@@ -51,8 +51,8 @@ templ Script(baseUrl, name, content string, matter internal.Matter) {
                             </button>
                         </div>
 
-                        <code class="block whitespace-pre max-w-full px-4 py-3 overflow-y-auto">
-                            wget -qO- {baseUrl}/{name} | sh
+                        <code class="block whitespace-pre max-w-full px-4 py-3 overflow-y-auto  [&>pre]:!bg-transparent [&>pre]:!w-max">
+                            @templ.Raw(internal.MustHighlight("shell", getWgetScript(baseUrl, name)))
                         </code>
                     </div>
                 </div>

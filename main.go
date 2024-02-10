@@ -1,18 +1,18 @@
 package main
 
 import (
-	"bytes"
 	"context"
 	_ "embed"
 	"flag"
+	"io"
+	"os"
+
 	"github.com/adrg/frontmatter"
 	"github.com/alecthomas/chroma/v2/formatters/html"
 	"github.com/alecthomas/chroma/v2/lexers"
 	"github.com/alecthomas/chroma/v2/styles"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
-	"io"
-	"os"
 	"sh.devminer.xyz/internal"
 	"sh.devminer.xyz/internal/web"
 )
@@ -131,17 +131,12 @@ func processFiles(start, root string) ([]internal.Script, error) {
 				return nil, err
 			}
 
-			iterator, err := ShellLexer.Tokenise(nil, content)
+			highlit, err := internal.Highlight("shell", content)
 			if err != nil {
 				return nil, err
 			}
 
-			buf := bytes.Buffer{}
-			if err := HTMLFormatter.Format(&buf, CatppuccinMacchiato, iterator); err != nil {
-				log.Fatal().Err(err).Msg("error writing css")
-			}
-
-			if err := renderFile(name, buf.String(), htmlPath, matter); err != nil {
+			if err := renderFile(name, highlit, htmlPath, matter); err != nil {
 				return nil, err
 			}
 			log.Info().Str("name", name).Str("inPath", inPath).Str("htmlPath", htmlPath).Str("scriptPath", scriptPath).Str("root", root).Str("start", start).Str("file.Name", file.Name()).Str("file", file.Name()).Str("start", start).Str("root", root).Str("htmlPath", htmlPath).Str("scriptPath", scriptPath).Str("inPath", inPath).Str("name", name).Str("file.Name", file.Name()).Str("start", start).Str("root", root).Msg("rendered")
