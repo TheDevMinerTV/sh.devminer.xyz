@@ -7,7 +7,7 @@ templ Script(baseUrl, name, content string, matter internal.Matter) {
     <html lang="en">
         <head>
             <meta charset="UTF-8" />
-            <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <meta http-equiv="X-UA-Compatible" content="ie=edge" />
             <title>DevScripts</title>
             <meta name="darkreader-lock" />
@@ -28,10 +28,10 @@ templ Script(baseUrl, name, content string, matter internal.Matter) {
 
                 <div class="relative border border-border max-w-full rounded-md w-full" data-copyable="">
                     <div class="absolute flex gap-2 top-0 right-0 p-3">
-                        <button type="button" class="text-inactive hocus:text-white transition-colors">
+                        <button type="button" class="text-inactive hocus:text-white transition-colors" aria-label="Copy to clipboard">
                             @ClipboardIcon()
                         </button>
-                        <a href={templ.SafeURL(F("/%s", name))} download class="text-inactive hocus:text-white transition-colors">
+                        <a href={templ.SafeURL(F("/%s", name))} download class="text-inactive hocus:text-white transition-colors" aria-label="Download script">
                             @DownloadIcon()
                         </a>
                     </div>
@@ -49,7 +49,7 @@ templ Script(baseUrl, name, content string, matter internal.Matter) {
 
                     <div class="relative max-w-full w-full" data-copyable="" data-tab-name="curl">
                         <div class="absolute top-0 right-0 px-4 py-3">
-                            <button type="button" class="text-inactive hocus:text-white transition-colors">
+                            <button type="button" class="text-inactive hocus:text-white transition-colors" aria-label="Copy to clipboard">
                                 @ClipboardIcon()
                             </button>
                         </div>
@@ -61,7 +61,7 @@ templ Script(baseUrl, name, content string, matter internal.Matter) {
 
                     <div class="relative max-w-full w-full" style="display: none" data-copyable="" data-tab-name="wget">
                         <div class="absolute top-0 right-0 p-3">
-                            <button type="button" class="text-inactive hocus:text-white transition-colors">
+                            <button type="button" class="text-inactive hocus:text-white transition-colors" aria-label="Copy to clipboard">
                                 @ClipboardIcon()
                             </button>
                         </div>

@@ -25,7 +25,7 @@ func Index(scripts []internal.Script) templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<!doctype html><html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0\"><meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\"><title>DevScripts</title><meta name=\"darkreader-lock\"><link rel=\"stylesheet\" href=\"/styles.css\"></head><body class=\"bg-black text-white p-6 pt-8\"><div class=\"flex flex-col gap-4 max-w-5xl mx-auto space-y-4\"><h1 class=\"text-3xl font-bold -mb-4 text-center text-inactive select-none\">DevScripts</h1><div class=\"flex flex-col gap-6 items-stretch text-center\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<!doctype html><html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\"><title>DevScripts</title><meta name=\"darkreader-lock\"><link rel=\"stylesheet\" href=\"/styles.css\"></head><body class=\"bg-black text-white p-6 pt-8\"><div class=\"flex flex-col gap-4 max-w-5xl mx-auto space-y-4\"><h1 class=\"text-3xl font-bold -mb-4 text-center text-inactive select-none\">DevScripts</h1><div class=\"flex flex-col gap-6 items-stretch text-center\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

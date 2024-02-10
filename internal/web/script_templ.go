@@ -25,7 +25,7 @@ func Script(baseUrl, name, content string, matter internal.Matter) templ.Compone
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<!doctype html><html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0\"><meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\"><title>DevScripts</title><meta name=\"darkreader-lock\"><link rel=\"stylesheet\" href=\"/styles.css\"></head><body class=\"bg-black text-white p-6 pt-8\"><div class=\"flex flex-col gap-4 max-w-5xl mx-auto\"><h1 class=\"text-3xl font-bold text-center text-inactive select-none\"><a href=\"/\" class=\"hocus:text-white text-inactive transition-colors\">DevScripts</a>/<span class=\"text-white\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<!doctype html><html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\"><title>DevScripts</title><meta name=\"darkreader-lock\"><link rel=\"stylesheet\" href=\"/styles.css\"></head><body class=\"bg-black text-white p-6 pt-8\"><div class=\"flex flex-col gap-4 max-w-5xl mx-auto\"><h1 class=\"text-3xl font-bold text-center text-inactive select-none\"><a href=\"/\" class=\"hocus:text-white text-inactive transition-colors\">DevScripts</a>/<span class=\"text-white\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -74,7 +74,7 @@ func Script(baseUrl, name, content string, matter internal.Matter) templ.Compone
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</p><div class=\"relative border border-border max-w-full rounded-md w-full\" data-copyable=\"\"><div class=\"absolute flex gap-2 top-0 right-0 p-3\"><button type=\"button\" class=\"text-inactive hocus:text-white transition-colors\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</p><div class=\"relative border border-border max-w-full rounded-md w-full\" data-copyable=\"\"><div class=\"absolute flex gap-2 top-0 right-0 p-3\"><button type=\"button\" class=\"text-inactive hocus:text-white transition-colors\" aria-label=\"Copy to clipboard\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -91,7 +91,7 @@ func Script(baseUrl, name, content string, matter internal.Matter) templ.Compone
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" download class=\"text-inactive hocus:text-white transition-colors\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" download class=\"text-inactive hocus:text-white transition-colors\" aria-label=\"Download script\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -119,7 +119,7 @@ func Script(baseUrl, name, content string, matter internal.Matter) templ.Compone
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div><div class=\"relative max-w-full w-full\" data-copyable=\"\" data-tab-name=\"curl\"><div class=\"absolute top-0 right-0 px-4 py-3\"><button type=\"button\" class=\"text-inactive hocus:text-white transition-colors\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div><div class=\"relative max-w-full w-full\" data-copyable=\"\" data-tab-name=\"curl\"><div class=\"absolute top-0 right-0 px-4 py-3\"><button type=\"button\" class=\"text-inactive hocus:text-white transition-colors\" aria-label=\"Copy to clipboard\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -153,7 +153,7 @@ func Script(baseUrl, name, content string, matter internal.Matter) templ.Compone
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(" | sh</code></div><div class=\"relative max-w-full w-full\" style=\"display: none\" data-copyable=\"\" data-tab-name=\"wget\"><div class=\"absolute top-0 right-0 p-3\"><button type=\"button\" class=\"text-inactive hocus:text-white transition-colors\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(" | sh</code></div><div class=\"relative max-w-full w-full\" style=\"display: none\" data-copyable=\"\" data-tab-name=\"wget\"><div class=\"absolute top-0 right-0 p-3\"><button type=\"button\" class=\"text-inactive hocus:text-white transition-colors\" aria-label=\"Copy to clipboard\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
