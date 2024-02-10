@@ -123,8 +123,8 @@ func processFiles(start, root string) ([]internal.Script, error) {
 			f = append(f, f2...)
 		} else {
 			inPath := start + "/" + file.Name()
-			scriptPath := start + "/" + name
-			htmlPath := *fOut + "/" + name + ".html"
+			scriptPath := *fOut + "/" + name
+			htmlPath := scriptPath + ".html"
 
 			content, matter, err := readFile(inPath)
 			if err != nil {
@@ -140,9 +140,9 @@ func processFiles(start, root string) ([]internal.Script, error) {
 				return nil, err
 			}
 			log.Info().Str("name", name).Str("inPath", inPath).Str("htmlPath", htmlPath).Str("scriptPath", scriptPath).Str("root", root).Str("start", start).Str("file.Name", file.Name()).Str("file", file.Name()).Str("start", start).Str("root", root).Str("htmlPath", htmlPath).Str("scriptPath", scriptPath).Str("inPath", inPath).Str("name", name).Str("file.Name", file.Name()).Str("start", start).Str("root", root).Msg("rendered")
-			//if err := copyFile(inPath, scriptPath); err != nil {
-			//	return nil, err
-			//}
+			if err := copyFile(inPath, scriptPath); err != nil {
+				return nil, err
+			}
 
 			f = append(f, internal.Script{
 				Name:   name,
