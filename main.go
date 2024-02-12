@@ -4,7 +4,6 @@ import (
 	"context"
 	_ "embed"
 	"flag"
-	"io"
 	"os"
 
 	"github.com/adrg/frontmatter"
@@ -139,10 +138,12 @@ func processFiles(start, root string) ([]internal.Script, error) {
 			if err := renderFile(name, highlit, htmlPath, matter); err != nil {
 				return nil, err
 			}
-			log.Info().Str("name", name).Str("inPath", inPath).Str("htmlPath", htmlPath).Str("scriptPath", scriptPath).Str("root", root).Str("start", start).Str("file.Name", file.Name()).Str("file", file.Name()).Str("start", start).Str("root", root).Str("htmlPath", htmlPath).Str("scriptPath", scriptPath).Str("inPath", inPath).Str("name", name).Str("file.Name", file.Name()).Str("start", start).Str("root", root).Msg("rendered")
-			if err := copyFile(inPath, scriptPath); err != nil {
+
+			if err := writeStringToFile(content, scriptPath); err != nil {
 				return nil, err
 			}
+
+			log.Info().Str("name", name).Str("inPath", inPath).Str("htmlPath", htmlPath).Str("scriptPath", scriptPath).Str("root", root).Str("start", start).Str("file.Name", file.Name()).Str("file", file.Name()).Str("start", start).Str("root", root).Str("htmlPath", htmlPath).Str("scriptPath", scriptPath).Str("inPath", inPath).Str("name", name).Str("file.Name", file.Name()).Str("start", start).Str("root", root).Msg("rendered")
 
 			f = append(f, internal.Script{
 				Name:   name,
@@ -154,30 +155,13 @@ func processFiles(start, root string) ([]internal.Script, error) {
 	return f, nil
 }
 
-func writeStringToFile(string, dst string) error {
+func writeStringToFile(content, dst string) error {
 	d, err := os.Create(dst)
 	if err != nil {
 		return err
 	}
 	defer d.Close()
 
-	_, err = d.WriteString(string)
-	return err
-}
-
-func copyFile(src, dst string) error {
-	s, err := os.Open(src)
-	if err != nil {
-		return err
-	}
-	defer s.Close()
-
-	d, err := os.Create(dst)
-	if err != nil {
-		return err
-	}
-	defer d.Close()
-
-	_, err = io.Copy(d, s)
+	_, err = d.WriteString(content)
 	return err
 }
