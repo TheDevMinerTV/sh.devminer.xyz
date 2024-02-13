@@ -2,6 +2,7 @@
 description: Install the OEM D kernel for Ubuntu 22.04.
 tags:
   - 'Framework 13" AMD'
+  - 'Ubuntu 22.04'
 ---
 #!/bin/bash
 
