@@ -23,7 +23,7 @@ templ Index(scripts []internal.Script) {
                             <a href={templ.SafeURL(F("/%s.html", script.Name))} class="font-bold text-xl transition-colors w-fit">{script.Name}</a>
                             <div class="flex flex-wrap justify-center w-full gap-2">
                                 for _, tag := range script.Matter.Tags {
-                                    <span class="text-inactive px-3 py-1 bg-border rounded">{tag}</span>
+                                    <span class="text-inactive px-2 py-1 bg-border rounded text-sm">{tag}</span>
                                 }
                             </div>
 

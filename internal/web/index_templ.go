@@ -57,14 +57,14 @@ func Index(scripts []internal.Script) templ.Component {
 				return templ_7745c5c3_Err
 			}
 			for _, tag := range script.Matter.Tags {
-				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<span class=\"text-inactive px-3 py-1 bg-border rounded\">")
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<span class=\"text-inactive px-2 py-1 bg-border rounded text-sm\">")
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
 				var templ_7745c5c3_Var4 string
 				templ_7745c5c3_Var4, templ_7745c5c3_Err = templ.JoinStringErrs(tag)
 				if templ_7745c5c3_Err != nil {
-					return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/web/index.templ`, Line: 25, Col: 96}
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/web/index.templ`, Line: 25, Col: 104}
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var4))
 				if templ_7745c5c3_Err != nil {
