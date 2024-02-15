@@ -5,6 +5,7 @@ import (
 	_ "embed"
 	"flag"
 	"os"
+	"io/fs"
 
 	"github.com/adrg/frontmatter"
 	"github.com/alecthomas/chroma/v2/formatters/html"
@@ -100,6 +101,7 @@ func processFiles(start, root string) ([]internal.Script, error) {
 	}
 
 	f := make([]internal.Script, 0, len(files))
+	folders := make([]fs.DirEntry, 0)
 
 	for _, file := range files {
 		name := (start + "/" + file.Name())[len(root)+1:]
@@ -107,19 +109,7 @@ func processFiles(start, root string) ([]internal.Script, error) {
 		log.Info().Str("start", start).Str("name", name).Str("root", root).Msg("processing object")
 
 		if file.IsDir() {
-			log.Info().Str("start", start).Str("file.Name", file.Name()).Str("root", root).Msg("processing folder")
-
-			if err := os.MkdirAll(*fOut+"/"+name, 0755); err != nil {
-				return nil, err
-			}
-
-			// support for nested folders
-			f2, err := processFiles(start+"/"+file.Name(), root)
-			if err != nil {
-				return nil, err
-			}
-
-			f = append(f, f2...)
+			folders = append(folders, file)
 		} else {
 			inPath := start + "/" + file.Name()
 			scriptPath := *fOut + "/" + name
@@ -150,6 +140,24 @@ func processFiles(start, root string) ([]internal.Script, error) {
 				Matter: matter,
 			})
 		}
+	}
+
+	for _, folder := range folders {
+		name := (start + "/" + folder.Name())[len(root)+1:]
+
+		log.Info().Str("file.Name", folder.Name()).Msg("processing folder")
+
+		if err := os.MkdirAll(*fOut+"/"+name, 0755); err != nil {
+			return nil, err
+		}
+
+		// support for nested folders
+		f2, err := processFiles(start+"/"+folder.Name(), root)
+		if err != nil {
+			return nil, err
+		}
+
+		f = append(f, f2...)
 	}
 
 	return f, nil
