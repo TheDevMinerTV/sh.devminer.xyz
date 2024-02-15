@@ -35,7 +35,6 @@ metadata:
 spec:
   hosts:
     - {{ .Values.service.host }}
-    - www.{{ .Values.service.host }}
   gateways:
     - {{ include "app.fullname" . }}
   # The order of the routes in this list matters, the catch-all (default) route goes last.
