@@ -3,15 +3,15 @@ module sh.devminer.xyz
 go 1.21
 
 require (
-	github.com/a-h/templ v0.2.552
+	github.com/a-h/templ v0.2.598
 	github.com/adrg/frontmatter v0.2.0
+	github.com/alecthomas/chroma/v2 v2.12.0
 	github.com/rs/zerolog v1.32.0
 )
 
 require (
 	github.com/BurntSushi/toml v0.3.1 // indirect
 	github.com/alecthomas/chroma v0.10.0 // indirect
-	github.com/alecthomas/chroma/v2 v2.12.0 // indirect
 	github.com/dlclark/regexp2 v1.10.0 // indirect
 	github.com/icy-comet/catppuccin-chroma-theme v0.0.0-20240106221804-2eed1a3412bd // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
