@@ -10,10 +10,9 @@ require (
 
 require (
 	github.com/BurntSushi/toml v0.3.1 // indirect
-	github.com/alecthomas/chroma v0.10.0 // indirect
-	github.com/alecthomas/chroma/v2 v2.12.0 // indirect
+	github.com/alecthomas/chroma/v2 v2.12.0
+	github.com/carlosstrand/go-sitemap v0.0.0-20191230193616-37cd6896357b
 	github.com/dlclark/regexp2 v1.10.0 // indirect
-	github.com/icy-comet/catppuccin-chroma-theme v0.0.0-20240106221804-2eed1a3412bd // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
 	golang.org/x/sys v0.16.0 // indirect

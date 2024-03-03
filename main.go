@@ -4,13 +4,16 @@ import (
 	"context"
 	_ "embed"
 	"flag"
-	"os"
 	"io/fs"
+	"os"
+	"path/filepath"
+	"time"
 
 	"github.com/adrg/frontmatter"
 	"github.com/alecthomas/chroma/v2/formatters/html"
 	"github.com/alecthomas/chroma/v2/lexers"
 	"github.com/alecthomas/chroma/v2/styles"
+	sitemap "github.com/carlosstrand/go-sitemap"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
 	"sh.devminer.xyz/internal"
@@ -59,6 +62,10 @@ func main() {
 
 	if err := writeStringToFile(CSS, *fOut+"/styles.css"); err != nil {
 		log.Fatal().Err(err).Msg("error writing styles.css")
+	}
+
+	if err := generateSitemap(files, *fOut); err != nil {
+		log.Fatal().Err(err).Msg("error generating sitemap")
 	}
 
 	log.Info().Msg("exiting")
@@ -172,4 +179,25 @@ func writeStringToFile(content, dst string) error {
 
 	_, err = d.WriteString(content)
 	return err
+}
+
+func generateSitemap(files []internal.Script, root string) error {
+	items := make([]*sitemap.SitemapItem, 0)
+	for _, file := range files {
+		items = append(items, &sitemap.SitemapItem{
+			Loc:        *fBaseUrl + "/" + file.Name + ".html",
+			LastMod:    time.Now(),
+			ChangeFreq: "monthly",
+			Priority:   0.5,
+		})
+	}
+
+	smStr, err := sitemap.NewSitemap(items, nil).ToXMLString()
+	if err != nil {
+		return err
+	}
+
+	smStr = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" + smStr
+
+	return writeStringToFile(smStr, filepath.Join(root, "sitemap.xml"))
 }
