@@ -3,7 +3,7 @@ module sh.devminer.xyz
 go 1.21
 
 require (
-	github.com/a-h/templ v0.2.552
+	github.com/a-h/templ v0.2.636
 	github.com/adrg/frontmatter v0.2.0
 	github.com/rs/zerolog v1.32.0
 )

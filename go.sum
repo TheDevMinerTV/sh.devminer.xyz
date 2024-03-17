@@ -1,5 +1,7 @@
 github.com/BurntSushi/toml v0.3.1 h1:WXkYYl6Yr3qBf1K79EBnL4mak0OimBfB0XUf9Vl28OQ=
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
+github.com/a-h/templ v0.2.636 h1:DypvFZcC3DeXwr90eUo6AngRWiupBcitD4xCTWSnYhI=
+github.com/a-h/templ v0.2.636/go.mod h1:SA7mtYwVEajbIXFRh3vKdYm/4FYyLQAtPH1+KxzGPA8=
 github.com/adrg/frontmatter v0.2.0 h1:/DgnNe82o03riBd1S+ZDjd43wAmC6W35q67NHeLkPd4=
 github.com/adrg/frontmatter v0.2.0/go.mod h1:93rQCj3z3ZlwyxxpQioRKC1wDLto4aXHrbqIsnH9wmE=
 github.com/alecthomas/assert/v2 v2.2.1 h1:XivOgYcduV98QCahG8T5XTezV5bylXe+lBxLG2K2ink=
