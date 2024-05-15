@@ -2,7 +2,7 @@
 description: "Run command and log it and it's output into a file"
 tags: []
 ---
-#!/bin/sh
+#!/usr/bin/env sh
 
 FILE="$1"
 shift
