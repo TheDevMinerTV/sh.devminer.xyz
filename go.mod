@@ -5,7 +5,7 @@ go 1.21
 require (
 	github.com/a-h/templ v0.2.697
 	github.com/adrg/frontmatter v0.2.0
-	github.com/rs/zerolog v1.32.0
+	github.com/rs/zerolog v1.33.0
 )
 
 require (
