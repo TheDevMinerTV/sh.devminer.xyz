@@ -1,6 +1,6 @@
 ---
 description: Copy all SSH keys from a folder onto multiple hosts.
-tags: []
+tags: [ssh]
 ---
 #!/bin/bash
 
