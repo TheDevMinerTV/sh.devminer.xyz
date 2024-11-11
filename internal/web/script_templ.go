@@ -84,15 +84,23 @@ func Script(baseUrl, name, content string, matter internal.Matter) templ.Compone
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = Tab("curl", true).Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = Tab("curl-exec", true).Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = Tab("wget", false).Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = Tab("curl-dl", false).Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div><div class=\"relative max-w-full w-full\" data-copyable=\"\" data-tab-name=\"curl\"><div class=\"absolute top-0 right-0 p-3\"><button type=\"button\" class=\"text-inactive hocus:text-white transition-colors\" aria-label=\"Copy to clipboard\">")
+		templ_7745c5c3_Err = Tab("wget-exec", false).Render(ctx, templ_7745c5c3_Buffer)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = Tab("wget-dl", false).Render(ctx, templ_7745c5c3_Buffer)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div><div class=\"relative max-w-full w-full\" data-copyable=\"\" data-tab-name=\"curl-exec\"><div class=\"absolute top-0 right-0 p-3\"><button type=\"button\" class=\"text-inactive hocus:text-white transition-colors\" aria-label=\"Copy to clipboard\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -104,11 +112,11 @@ func Script(baseUrl, name, content string, matter internal.Matter) templ.Compone
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templ.Raw(internal.MustHighlight("shell", getCurlScript(baseUrl, name, !matter.DownloadOnly))).Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = templ.Raw(internal.MustHighlight("shell", getCurlScript(baseUrl, name, true))).Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</code></div><div class=\"relative max-w-full w-full\" style=\"display: none\" data-copyable=\"\" data-tab-name=\"wget\"><div class=\"absolute top-0 right-0 p-3\"><button type=\"button\" class=\"text-inactive hocus:text-white transition-colors\" aria-label=\"Copy to clipboard\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</code></div><div class=\"relative max-w-full w-full\" style=\"display: none\" data-copyable=\"\" data-tab-name=\"curl-dl\"><div class=\"absolute top-0 right-0 p-3\"><button type=\"button\" class=\"text-inactive hocus:text-white transition-colors\" aria-label=\"Copy to clipboard\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -120,7 +128,39 @@ func Script(baseUrl, name, content string, matter internal.Matter) templ.Compone
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templ.Raw(internal.MustHighlight("shell", getWgetScript(baseUrl, name, !matter.DownloadOnly))).Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = templ.Raw(internal.MustHighlight("shell", getCurlScript(baseUrl, name, false))).Render(ctx, templ_7745c5c3_Buffer)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</code></div><div class=\"relative max-w-full w-full\" style=\"display: none\" data-copyable=\"\" data-tab-name=\"wget-exec\"><div class=\"absolute top-0 right-0 p-3\"><button type=\"button\" class=\"text-inactive hocus:text-white transition-colors\" aria-label=\"Copy to clipboard\">")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = ClipboardIcon().Render(ctx, templ_7745c5c3_Buffer)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</button></div><code class=\"block whitespace-pre max-w-full px-4 py-3 overflow-y-auto  [&amp;&gt;pre]:!bg-transparent [&amp;&gt;pre]:!w-max\">")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = templ.Raw(internal.MustHighlight("shell", getWgetScript(baseUrl, name, true))).Render(ctx, templ_7745c5c3_Buffer)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</code></div><div class=\"relative max-w-full w-full\" style=\"display: none\" data-copyable=\"\" data-tab-name=\"wget-dl\"><div class=\"absolute top-0 right-0 p-3\"><button type=\"button\" class=\"text-inactive hocus:text-white transition-colors\" aria-label=\"Copy to clipboard\">")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = ClipboardIcon().Render(ctx, templ_7745c5c3_Buffer)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</button></div><code class=\"block whitespace-pre max-w-full px-4 py-3 overflow-y-auto  [&amp;&gt;pre]:!bg-transparent [&amp;&gt;pre]:!w-max\">")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = templ.Raw(internal.MustHighlight("shell", getWgetScript(baseUrl, name, false))).Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -205,7 +245,7 @@ func Tab(label string, active bool) templ.Component {
 		var templ_7745c5c3_Var7 string
 		templ_7745c5c3_Var7, templ_7745c5c3_Err = templ.JoinStringErrs(F("%v", active))
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/web/script.templ`, Line: 83, Col: 40}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/web/script.templ`, Line: 109, Col: 40}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var7))
 		if templ_7745c5c3_Err != nil {
@@ -218,7 +258,7 @@ func Tab(label string, active bool) templ.Component {
 		var templ_7745c5c3_Var8 string
 		templ_7745c5c3_Var8, templ_7745c5c3_Err = templ.JoinStringErrs(label)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/web/script.templ`, Line: 83, Col: 192}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/web/script.templ`, Line: 109, Col: 192}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var8))
 		if templ_7745c5c3_Err != nil {
