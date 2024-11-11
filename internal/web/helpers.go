@@ -8,7 +8,7 @@ var F = fmt.Sprintf
 
 func getCurlScript(baseUrl, name string, execute bool) string {
 	if !execute {
-		return fmt.Sprintf("curl -sSL %s/%s -O %s", baseUrl, name, name)
+		return fmt.Sprintf("curl -sSL %s/%s -o %s", baseUrl, name, name)
 	}
 
 	return fmt.Sprintf("curl -sSL %s/%s | sh", baseUrl, name)
