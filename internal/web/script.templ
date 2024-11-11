@@ -40,7 +40,7 @@ templ Script(baseUrl, name, content string, matter internal.Matter) {
                         </div>
 
                         <code class="block whitespace-pre max-w-full px-4 py-3 overflow-y-auto [&>pre]:!bg-transparent [&>pre]:!w-max">
-                            @templ.Raw(internal.MustHighlight("shell", getCurlScript(baseUrl, name)))
+                            @templ.Raw(internal.MustHighlight("shell", getCurlScript(baseUrl, name, !matter.DownloadOnly)))
                         </code>
                     </div>
 
@@ -52,7 +52,7 @@ templ Script(baseUrl, name, content string, matter internal.Matter) {
                         </div>
 
                         <code class="block whitespace-pre max-w-full px-4 py-3 overflow-y-auto  [&>pre]:!bg-transparent [&>pre]:!w-max">
-                            @templ.Raw(internal.MustHighlight("shell", getWgetScript(baseUrl, name)))
+                            @templ.Raw(internal.MustHighlight("shell", getWgetScript(baseUrl, name, !matter.DownloadOnly)))
                         </code>
                     </div>
                 </div>

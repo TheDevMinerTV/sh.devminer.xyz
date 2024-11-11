@@ -6,10 +6,18 @@ import (
 
 var F = fmt.Sprintf
 
-func getCurlScript(baseUrl, name string) string {
+func getCurlScript(baseUrl, name string, execute bool) string {
+	if !execute {
+		return fmt.Sprintf("curl -sSL %s/%s -O %s", baseUrl, name, name)
+	}
+
 	return fmt.Sprintf("curl -sSL %s/%s | sh", baseUrl, name)
 }
 
-func getWgetScript(baseUrl, name string) string {
+func getWgetScript(baseUrl, name string, execute bool) string {
+	if !execute {
+		return fmt.Sprintf("wget -qO %s %s/%s | sh", name, baseUrl, name)
+	}
+
 	return fmt.Sprintf("wget -qO- %s/%s | sh", baseUrl, name)
 }

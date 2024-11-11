@@ -1,6 +1,7 @@
 ---
 description: Simple wrapper around the compose.yml files for different environments
 tags: [docker]
+download-only: true
 ---
 #!/usr/bin/env bash
 
@@ -12,9 +13,9 @@ tags: [docker]
 
 VALID_ENVS=("dev" "prod")
 
-if [ -z $1 ]; then
+if [ -z "$1" ]; then
   echo "Environments:" >&2
-  for ENV in ${VALID_ENVS[@]}; do
+  for ENV in "${VALID_ENVS[@]}"; do
     echo "- $ENV" >&2
   done
   exit 1
