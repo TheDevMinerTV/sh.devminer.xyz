@@ -1,7 +1,7 @@
 {
   "private": true,
   "license": "MIT",
-  "packageManager": "pnpm@9.14.1",
+  "packageManager": "pnpm@9.14.2",
   "scripts": {
     "start": "pnpm build:assets && pnpm go:start",
     "dev": "pnpm build:assets && concurrently -n css,go,templ \"pnpm css:dev\" \"pnpm go:dev\" \"pnpm templ:dev\"",
