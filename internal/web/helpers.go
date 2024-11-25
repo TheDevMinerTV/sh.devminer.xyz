@@ -16,7 +16,7 @@ func getCurlScript(baseUrl, name string, execute bool) string {
 
 func getWgetScript(baseUrl, name string, execute bool) string {
 	if !execute {
-		return fmt.Sprintf("wget -qO %s %s/%s | sh", name, baseUrl, name)
+		return fmt.Sprintf("wget -qO %s %s/%s", name, baseUrl, name)
 	}
 
 	return fmt.Sprintf("wget -qO- %s/%s | sh", baseUrl, name)
