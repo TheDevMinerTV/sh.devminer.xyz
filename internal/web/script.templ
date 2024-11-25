@@ -28,13 +28,13 @@ templ Script(baseUrl, name, content string, matter internal.Matter) {
 
                 <div class="relative border border-border max-w-full rounded-md w-full divide-y divide-border" data-tab="curl">
                     <div class="flex gap-2 px-4 py-3">
-                        @Tab("curl-exec", true)
-                        @Tab("curl-dl", false)
-                        @Tab("wget-exec", false)
-                        @Tab("wget-dl", false)
+                        @Tab("execute via curl", true)
+                        @Tab("download via curl", false)
+                        @Tab("execute via wget", false)
+                        @Tab("download via wget", false)
                     </div>
 
-                    <div class="relative max-w-full w-full" data-copyable="" data-tab-name="curl-exec">
+                    <div class="relative max-w-full w-full" data-copyable="" data-tab-name="execute via curl">
                         <div class="absolute top-0 right-0 p-3">
                             <button type="button" class="text-inactive hocus:text-white transition-colors" aria-label="Copy to clipboard">
                                 @ClipboardIcon()
@@ -46,31 +46,31 @@ templ Script(baseUrl, name, content string, matter internal.Matter) {
                         </code>
                     </div>
 
-                    <div class="relative max-w-full w-full" style="display: none" data-copyable="" data-tab-name="curl-dl">
+                    <div class="relative max-w-full w-full" style="display: none" data-copyable="" data-tab-name="download via curl">
                         <div class="absolute top-0 right-0 p-3">
                             <button type="button" class="text-inactive hocus:text-white transition-colors" aria-label="Copy to clipboard">
                                 @ClipboardIcon()
                             </button>
                         </div>
 
-                        <code class="block whitespace-pre max-w-full px-4 py-3 overflow-y-auto  [&>pre]:!bg-transparent [&>pre]:!w-max">
+                        <code class="block whitespace-pre max-w-full px-4 py-3 overflow-y-auto [&>pre]:!bg-transparent [&>pre]:!w-max">
                             @templ.Raw(internal.MustHighlight("shell", getCurlScript(baseUrl, name, false)))
                         </code>
                     </div>
 
-                    <div class="relative max-w-full w-full" style="display: none" data-copyable="" data-tab-name="wget-exec">
+                    <div class="relative max-w-full w-full" style="display: none" data-copyable="" data-tab-name="execute via wget">
                         <div class="absolute top-0 right-0 p-3">
                             <button type="button" class="text-inactive hocus:text-white transition-colors" aria-label="Copy to clipboard">
                                 @ClipboardIcon()
                             </button>
                         </div>
 
-                        <code class="block whitespace-pre max-w-full px-4 py-3 overflow-y-auto  [&>pre]:!bg-transparent [&>pre]:!w-max">
+                        <code class="block whitespace-pre max-w-full px-4 py-3 overflow-y-auto [&>pre]:!bg-transparent [&>pre]:!w-max">
                             @templ.Raw(internal.MustHighlight("shell", getWgetScript(baseUrl, name, true)))
                         </code>
                     </div>
 
-                    <div class="relative max-w-full w-full" style="display: none" data-copyable="" data-tab-name="wget-dl">
+                    <div class="relative max-w-full w-full" style="display: none" data-copyable="" data-tab-name="download via wget">
                         <div class="absolute top-0 right-0 p-3">
                             <button type="button" class="text-inactive hocus:text-white transition-colors" aria-label="Copy to clipboard">
                                 @ClipboardIcon()
