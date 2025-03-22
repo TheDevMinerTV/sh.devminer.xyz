@@ -7,7 +7,7 @@ toolchain go1.24.1
 require (
 	github.com/a-h/templ v0.3.833
 	github.com/adrg/frontmatter v0.2.0
-	github.com/rs/zerolog v1.33.0
+	github.com/rs/zerolog v1.34.0
 )
 
 require (
