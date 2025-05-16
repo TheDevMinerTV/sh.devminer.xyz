@@ -36,7 +36,7 @@ require (
 
 require (
 	github.com/BurntSushi/toml v0.3.1 // indirect
-	github.com/alecthomas/chroma/v2 v2.17.2
+	github.com/alecthomas/chroma/v2 v2.18.0
 	github.com/carlosstrand/go-sitemap v0.0.0-20191230193616-37cd6896357b
 	github.com/dlclark/regexp2 v1.11.5 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
