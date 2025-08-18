@@ -9,6 +9,6 @@ RUN CGO_ENABLED=0 go build -o /gen -ldflags="-w -s"
 RUN /gen -out /out -base-url https://sh.devminer.xyz
 
 
-FROM ghcr.io/thedevminertv/gostatic:1.3.10
+FROM ghcr.io/thedevminertv/gostatic:1.4.0
 
 COPY --from=builder /out /static
