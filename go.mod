@@ -1,11 +1,11 @@
 module sh.devminer.xyz
 
-go 1.23.0
+go 1.25.0
 
 toolchain go1.26.3
 
 require (
-	github.com/a-h/templ v0.3.1001
+	github.com/a-h/templ v0.3.1020
 	github.com/adrg/frontmatter v0.2.0
 	github.com/rs/zerolog v1.35.1
 )
@@ -29,7 +29,7 @@ require (
 	go.uber.org/multierr v1.11.0 // indirect
 	go.uber.org/zap v1.27.0 // indirect
 	golang.org/x/mod v0.26.0 // indirect
-	golang.org/x/net v0.42.0 // indirect
+	golang.org/x/net v0.51.0 // indirect
 	golang.org/x/sync v0.16.0 // indirect
 	golang.org/x/tools v0.35.0 // indirect
 )
@@ -41,7 +41,7 @@ require (
 	github.com/dlclark/regexp2 v1.12.0 // indirect
 	github.com/mattn/go-colorable v0.1.14 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
-	golang.org/x/sys v0.34.0 // indirect
+	golang.org/x/sys v0.41.0 // indirect
 	gopkg.in/yaml.v2 v2.3.0 // indirect
 )
 
