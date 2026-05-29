@@ -18,7 +18,7 @@ require (
 	github.com/andybalholm/cascadia v1.3.3 // indirect
 	github.com/cenkalti/backoff/v4 v4.3.0 // indirect
 	github.com/cli/browser v1.3.0 // indirect
-	github.com/dlclark/regexp2/v2 v2.1.0 // indirect
+	github.com/dlclark/regexp2/v2 v2.1.1 // indirect
 	github.com/fatih/color v1.18.0 // indirect
 	github.com/fsnotify/fsnotify v1.8.0 // indirect
 	github.com/natefinch/atomic v1.0.1 // indirect
@@ -37,7 +37,7 @@ require (
 
 require (
 	github.com/BurntSushi/toml v0.3.1 // indirect
-	github.com/alecthomas/chroma/v2 v2.26.0
+	github.com/alecthomas/chroma/v2 v2.26.1
 	github.com/carlosstrand/go-sitemap v0.0.0-20191230193616-37cd6896357b
 	github.com/dlclark/regexp2 v1.12.0 // indirect
 	github.com/mattn/go-colorable v0.1.14 // indirect
