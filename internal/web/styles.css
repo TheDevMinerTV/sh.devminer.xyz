@@ -1,8 +1,23 @@
 /* This file is the entrypoint for the TailwindCSS compiler */
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss" source(none);
+@source "./**/*.templ";
+
+@theme {
+    --color-border: #1c1c23;
+    --color-inactive: #86868c;
+}
+
+@custom-variant hocus (&:hover, &:focus);
+@custom-variant tab-active (&[data-active='true']);
+
+/* Tailwind v4 preflight no longer sets cursor: pointer on buttons; keep the v3 behaviour */
+@layer base {
+    button:not(:disabled),
+    [role="button"]:not(:disabled) {
+        cursor: pointer;
+    }
+}
 
 /* scrollbars */
 ::-webkit-scrollbar {
