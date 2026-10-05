@@ -5,7 +5,7 @@ go 1.26.0
 toolchain go1.27.1
 
 require (
-	github.com/a-h/templ v0.3.1020
+	github.com/a-h/templ v0.3.1070
 	github.com/adrg/frontmatter v0.2.0
 	github.com/rs/zerolog v1.35.1
 )
