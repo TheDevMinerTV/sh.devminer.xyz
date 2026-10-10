@@ -16,7 +16,7 @@ importers:
         version: 10.0.6
       cssnano:
         specifier: ^9.0.5
-        version: 9.4.0(postcss@8.5.29)
+        version: 9.5.0(postcss@8.5.29)
       nodemon:
         specifier: ^3.1.14
         version: 3.1.14
@@ -249,8 +249,8 @@ packages:
     engines: {node: '>=4'}
     hasBin: true
 
-  cssnano-preset-default@9.4.0:
-    resolution: {integrity: sha512-TPlrCXb2W4/5vVaO+fntAZqdnWDHIVuafg9bTUVsBT5dfQjchybpG6iZDs4+Taywvz/4jAaYy8gQDDP9AXJqZw==}
+  cssnano-preset-default@9.5.0:
+    resolution: {integrity: sha512-gubPgjwbJLttmWV5LuRn2HBJ1a84XNXqEsEj1gZ57rqyMzo/c96BZ6BdybyrrI2AwUfWNFcrxG2ZKPEcvUlvNw==}
     engines: {node: ^22.22.3 || ^24.15.0 || >=26.0}
     peerDependencies:
       postcss: ^8.5.29
@@ -261,8 +261,8 @@ packages:
     peerDependencies:
       postcss: ^8.5.29
 
-  cssnano@9.4.0:
-    resolution: {integrity: sha512-+bn2yyAYMlE8biUcSN4iRUEmhe7TlPymr8OpruYPmK0vkcrZLeG1uFv3m/WhIksTa4DhPKMOI0uZCDxs+5EnyQ==}
+  cssnano@9.5.0:
+    resolution: {integrity: sha512-PlL7BWzHLWAgOyK9dohMmi0g4TwmsCwc3oxLsxa8S1UMaXLawaP0yle0/8X6nKC/ojk7vE38meARlwz7/Q5BAQ==}
     engines: {node: ^22.22.3 || ^24.15.0 || >=26.0}
     peerDependencies:
       postcss: ^8.5.29
@@ -301,8 +301,8 @@ packages:
   domutils@3.2.2:
     resolution: {integrity: sha512-6kZKyUajlDuqlHKVX1w7gyslj9MPIXzIFiz/rGu35uC1wMi+kMhQwGhl4lt9unC9Vb9INnY9Z3/ZA3+FhASLaw==}
 
-  electron-to-chromium@1.5.451:
-    resolution: {integrity: sha512-vUNKPrUzw8ByEMOxloq0a71iD/mPuPxVkbDm3G5YhnxTzOw/I6qAg2MUS0cYj/c267lWmw26yW4Vv7foxTxPLg==}
+  electron-to-chromium@1.5.452:
+    resolution: {integrity: sha512-cVvk1YBSj6571VmV6hdJTqj94Y79xSu8cj6Y9t6ae4Y4431z8/7EJFvu3rVp90xhfuv9BpPKUmaLfTo4+FOGBg==}
 
   emoji-regex@10.6.0:
     resolution: {integrity: sha512-toUI84YS5YmxW219erniWD0CIVOo46xGKColeNQRgOzDorgBi1v4D71/OFzgD9GO2UGKIv1C3Sp8DAn0+j5w7A==}
@@ -644,8 +644,8 @@ packages:
     peerDependencies:
       postcss: ^8.5.29
 
-  postcss-normalize-unicode@9.0.6:
-    resolution: {integrity: sha512-cDJo3cdMIM4hqMDjXT6zNxTt9JxZkw0e+1ldd/060WMtZ4MfBbfaJpqcOA8fwP2FW5M9ywpGXpV2PREJrlTgeg==}
+  postcss-normalize-unicode@9.1.0:
+    resolution: {integrity: sha512-RuEXyPVtC+hyqpdfCiIZSBO1x2/kgTDqWJX0srNLjTTiikwbdQAM1B57241o5tAu7zqpwPwct16ChJqYQiFlyQ==}
     engines: {node: ^22.22.3 || ^24.15.0 || >=26.0}
     peerDependencies:
       postcss: ^8.5.29
@@ -656,8 +656,8 @@ packages:
     peerDependencies:
       postcss: ^8.5.29
 
-  postcss-normalize-whitespace@9.0.6:
-    resolution: {integrity: sha512-/UKEFxau3f2RH/HUoItIhhhvRfhiBUi0iumXLt7oJIjXyaZs1FllvJ6sLhLXCYrP5PJs8/WpO1tjb/UHDC+T5g==}
+  postcss-normalize-whitespace@9.0.7:
+    resolution: {integrity: sha512-nwKlSuaZ4x1Bfo6ajgCDvZDSX7wZv4vnRnHiLhcKaurP6/nD1zEtt7Dm/y9GvcmPqNHH8llwW8zJC8YEFTFcRA==}
     engines: {node: ^22.22.3 || ^24.15.0 || >=26.0}
     peerDependencies:
       postcss: ^8.5.29
@@ -1022,7 +1022,7 @@ snapshots:
     dependencies:
       baseline-browser-mapping: 2.11.28
       caniuse-lite: 1.0.30001815
-      electron-to-chromium: 1.5.451
+      electron-to-chromium: 1.5.452
       node-releases: 2.0.58
       update-browserslist-db: 1.3.4(browserslist@4.29.3)
 
@@ -1090,7 +1090,7 @@ snapshots:
 
   cssesc@3.0.0: {}
 
-  cssnano-preset-default@9.4.0(postcss@8.5.29):
+  cssnano-preset-default@9.5.0(postcss@8.5.29):
     dependencies:
       browserslist: 4.29.3
       cssnano-utils: 8.2.1(postcss@8.5.29)
@@ -1114,9 +1114,9 @@ snapshots:
       postcss-normalize-repeat-style: 9.0.6(postcss@8.5.29)
       postcss-normalize-string: 9.0.6(postcss@8.5.29)
       postcss-normalize-timing-functions: 9.0.6(postcss@8.5.29)
-      postcss-normalize-unicode: 9.0.6(postcss@8.5.29)
+      postcss-normalize-unicode: 9.1.0(postcss@8.5.29)
       postcss-normalize-url: 9.0.6(postcss@8.5.29)
-      postcss-normalize-whitespace: 9.0.6(postcss@8.5.29)
+      postcss-normalize-whitespace: 9.0.7(postcss@8.5.29)
       postcss-ordered-values: 9.0.8(postcss@8.5.29)
       postcss-reduce-initial: 9.0.7(postcss@8.5.29)
       postcss-reduce-transforms: 9.0.5(postcss@8.5.29)
@@ -1128,9 +1128,9 @@ snapshots:
       '@csstools/css-tokenizer': 4.0.2
       postcss: 8.5.29
 
-  cssnano@9.4.0(postcss@8.5.29):
+  cssnano@9.5.0(postcss@8.5.29):
     dependencies:
-      cssnano-preset-default: 9.4.0(postcss@8.5.29)
+      cssnano-preset-default: 9.5.0(postcss@8.5.29)
       postcss: 8.5.29
 
   csso@5.0.5:
@@ -1165,7 +1165,7 @@ snapshots:
       domelementtype: 2.3.0
       domhandler: 5.0.3
 
-  electron-to-chromium@1.5.451: {}
+  electron-to-chromium@1.5.452: {}
 
   emoji-regex@10.6.0: {}
 
@@ -1451,7 +1451,7 @@ snapshots:
       cssnano-utils: 8.2.1(postcss@8.5.29)
       postcss: 8.5.29
 
-  postcss-normalize-unicode@9.0.6(postcss@8.5.29):
+  postcss-normalize-unicode@9.1.0(postcss@8.5.29):
     dependencies:
       '@csstools/css-tokenizer': 4.0.2
       browserslist: 4.29.3
@@ -1464,7 +1464,7 @@ snapshots:
       cssnano-utils: 8.2.1(postcss@8.5.29)
       postcss: 8.5.29
 
-  postcss-normalize-whitespace@9.0.6(postcss@8.5.29):
+  postcss-normalize-whitespace@9.0.7(postcss@8.5.29):
     dependencies:
       '@csstools/css-tokenizer': 4.0.2
       cssnano-utils: 8.2.1(postcss@8.5.29)
