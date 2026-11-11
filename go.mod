@@ -2,7 +2,7 @@ module sh.devminer.xyz
 
 go 1.26.0
 
-toolchain go1.27.3
+toolchain go1.27.4
 
 require (
 	github.com/a-h/templ v0.3.1070
