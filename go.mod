@@ -7,14 +7,15 @@ toolchain go1.27.4
 require (
 	github.com/a-h/templ v0.3.1070
 	github.com/adrg/frontmatter v0.2.0
+	github.com/alecthomas/chroma/v2 v2.27.0
 	github.com/rs/zerolog v1.35.1
 )
 
-require github.com/dlclark/regexp2/v2 v2.8.0 // indirect
+require github.com/dlclark/regexp2/v2 v2.10.1 // indirect
 
 require (
 	github.com/BurntSushi/toml v1.6.0 // indirect
-	github.com/alecthomas/chroma/v2 v2.27.0
+	github.com/alecthomas/chroma/v3 v3.0.0
 	github.com/carlosstrand/go-sitemap v0.0.0-20191230193616-37cd6896357b
 	github.com/mattn/go-colorable v0.1.15 // indirect
 	github.com/mattn/go-isatty v0.0.24 // indirect
